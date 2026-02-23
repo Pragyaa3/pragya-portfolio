@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import ChatWidget from "./components/ChatWidget";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  // Custom cursor
+  useEffect(() => {
+    const cursor = document.createElement("div");
+    cursor.className = "cursor";
+    const follower = document.createElement("div");
+    follower.className = "cursor-follower";
+    document.body.appendChild(cursor);
+    document.body.appendChild(follower);
+
+    let fx = 0, fy = 0;
+    let mx = 0, my = 0;
+
+    const onMove = (e: MouseEvent) => {
+      mx = e.clientX;
+      my = e.clientY;
+      cursor.style.left = `${mx}px`;
+      cursor.style.top = `${my}px`;
+    };
+
+    const animate = () => {
+      fx += (mx - fx) * 0.12;
+      fy += (my - fy) * 0.12;
+      follower.style.left = `${fx}px`;
+      follower.style.top = `${fy}px`;
+      requestAnimationFrame(animate);
+    };
+
+    document.addEventListener("mousemove", onMove);
+    animate();
+
+    return () => {
+      document.removeEventListener("mousemove", onMove);
+      cursor.remove();
+      follower.remove();
+    };
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main>
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <ChatWidget />
+    </main>
+  );
 }
-
-export default App
