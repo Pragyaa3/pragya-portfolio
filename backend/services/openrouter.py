@@ -5,7 +5,7 @@ from models.schemas import Message
 from data.resume import RESUME_CONTEXT
 
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
-MODEL = "meta-llama/llama-3.1-8b-instruct:free"
+MODEL = "deepseek/deepseek-r1-0528:free"
 
 async def get_chat_response(message: str, history: List[Message]) -> str:
     api_key = os.getenv("OPENROUTER_API_KEY")
