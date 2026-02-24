@@ -2,7 +2,7 @@
 
 > Full-Stack & Blockchain Developer portfolio with an AI chat assistant that answers questions about my resume, skills, projects, and experience in real-time.
 
-![Portfolio Preview](https://my-portfolio-seven-orpin-24.vercel.app/)
+![Portfolio Preview](https://approaches-explicitly-had-includes.trycloudflare.com)
 
 ---
 
@@ -14,6 +14,8 @@
 - **Scroll Animations** — Fade-in reveals on every section
 - **Experience Timeline** — All internships with details
 - **Achievements Section** — Hackathon wins and recognitions
+- **Featured Projects** — VerdictXR, Unified Inbox, CertifyHub, Microservices E-commerce, MediSync
+- **Experience Timeline** with 4 internships/roles
 - **Chat History Logging** — All conversations saved to SQLite database
 - **Multi-Model Fallback** — Automatically switches to next free model if rate limited
 
