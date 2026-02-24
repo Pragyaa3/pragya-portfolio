@@ -34,6 +34,19 @@ const projects = [
     color: "var(--indigo)",
     border: "rgba(129,140,248,0.15)",
   },
+
+  {
+    emoji: "📬",
+    title: "Unified Inbox",
+    subtitle: "Multi-Channel Communication Platform",
+    description: "Full-stack platform aggregating SMS, WhatsApp, and email into a unified inbox for businesses. Real-time webhook processing, thread-based conversation management, message scheduling and analytics dashboard.",
+    tech: ["Next.js", "PostgreSQL", "Prisma", "Twilio API", "TypeScript"],
+    github: null,
+    live: null,
+    color: "var(--pink)",
+    border: "rgba(244,114,182,0.15)",
+  },
+
   {
     emoji: "🏥",
     title: "MediSync",
